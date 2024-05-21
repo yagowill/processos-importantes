@@ -18,7 +18,17 @@ def find_process(browser):
         browser.execute_script("arguments[0].click();", btnPesquisar)
         time.sleep(3)
         
-        date_last_processing = wait_element(browser, By.XPATH, '//*[@id="protocolo_form_consulta:ultimaTram:0:j_id331"]').text
-        location_last_processing = wait_element(browser, By.XPATH, '//*[@id="protocolo_form_consulta:ultimaTram:0:j_id325"]').text
-        print(f"    {protocol_number}    |      {date_last_processing}     |    {location_last_processing.split("»")[1].strip()}   ")
+        date_last_processing = wait_element(
+            browser,
+            By.XPATH,
+            '//*[@id="protocolo_form_consulta:ultimaTram:0:j_id331"]'
+        ).text
+
+        location_last_processing = wait_element(
+            browser,
+            By.XPATH,
+            '//*[@id="protocolo_form_consulta:ultimaTram:0:j_id325"]'
+        ).text
+        
+        print(f"    {protocol_number}    |      {date_last_processing}     |    {location_last_processing.split('»')[1].strip()}   ")
         print("-"*78)
